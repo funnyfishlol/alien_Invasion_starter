@@ -16,6 +16,19 @@ class Ship:
 
         self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
+        self.moving_right = False
+        self.moving_left = False
+        self.x = float(self.rect.x)
+        self.speed = 10
+        self.boundaries = self.screen.get_rect()
     
     def draw(self):
         self.screen.blit(self.image, self.rect)
+
+    def update(self):
+        if(self.moving_right and self.rect.right < self.boundaries.right):
+            self.x += self.speed
+        if(self.moving_left and self.rect.left > self.boundaries.left):
+            self.x -= self.speed
+
+        self.rect.x = self.x
