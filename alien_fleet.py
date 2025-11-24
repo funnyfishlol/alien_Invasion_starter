@@ -34,7 +34,8 @@ class AlienFleet:
                 current_y = alien_h * row + y_offset
                 if(col%2==0 or row%2==0):
                     continue
-                self._create_alien(current_x, current_y)
+                if(row%4 == col%4):
+                    self._create_alien(current_x, current_y)
 
     def calculate_offsets(self, alien_w, alien_h, screen_w, fleet_w, fleet_h):
         half_screen = self.settings.screen_w/2

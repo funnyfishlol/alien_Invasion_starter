@@ -14,14 +14,14 @@ class Settings:
 
         self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'orangelaser.png'
         self.laser_sound = Path.cwd() / 'Assets' / 'sound' / 'newlaser.mp3'
-        self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'
+        self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'clonk.mp3'
         self.bullet_speed = 7
         self.bullet_w = 25
         self.bullet_h = 80
         self.bullet_amount = 5
 
         self.alien_file = Path.cwd() / 'Assets' / 'images' / 'Alien-Transparent-Images.png'
-        self.fleet_speed = 4
+        self.fleet_speed = 3
         self.fleet_direction = 1
         self.fleet_drop_speed = 40
         self.alien_w = 60

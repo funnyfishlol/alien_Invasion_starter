@@ -29,7 +29,7 @@ class AlienInvasion:
         self.laser_sound = pygame.mixer.Sound(self.settings.laser_sound)
         self.laser_sound.set_volume(0.7)
         self.impact_sound = pygame.mixer.Sound(self.settings.impact_sound)
-        self.impact_sound.set_volume(0.7)
+        self.impact_sound.set_volume(0.3)
 
         self.game_active = True
 
@@ -53,7 +53,6 @@ class AlienInvasion:
         collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
         if(collisions):
             self.impact_sound.play()
-            self.impact_sound.fadeout(300)
 
         if self.alien_fleet.check_destroyed_status():
             self._check_game_status()
