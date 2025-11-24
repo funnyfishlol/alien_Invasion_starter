@@ -10,6 +10,7 @@ class Settings:
         self.ship_file = Path.cwd() / 'Assets' / 'images' / 'pngtree-x-wing-starfigher-star-wars-ija-collection-png-image_8656566.png'
         self.ship_w = 60
         self.ship_h = 90
+        self.starting_ship_count = 3
 
         self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'orangelaser.png'
         self.laser_sound = Path.cwd() / 'Assets' / 'sound' / 'newlaser.mp3'
