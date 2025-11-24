@@ -16,14 +16,17 @@ class Ship:
         self.image = pygame.transform.scale(self.image, (self.settings.ship_w, self.settings.ship_h))
 
         self.rect = self.image.get_rect()
-        self.rect.midbottom = self.screen_rect.midbottom
+        self._center_ship()
         self.moving_right = False
         self.moving_left = False
-        self.x = float(self.rect.x)
         self.speed = 10
         self.boundaries = self.screen.get_rect()
 
         self.arsenal = arsenal
+
+    def _center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
     
     def draw(self):
         self.arsenal.draw()
@@ -43,3 +46,9 @@ class Ship:
 
     def fire(self):
         return self.arsenal.fire_bullet()
+    
+    def check_collisions(self, other_group):
+        if(pygame.sprite.spritecollideany(self, other_group)):
+            self._center_ship()
+            return True
+        return False
